@@ -1,25 +1,18 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import { QueryClient, QueryClientProvider } from "react-query";
+import {
+  RouterProvider
+} from "react-router-dom";
 import "./App.css";
-import { ExerciseList } from "./components/ExerciseList";
+import { router } from './routes/exerciseRoute';
 
 const queryClient = new QueryClient();
 
 function App() {
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     const result = await getData();
-
-  //     setData(result.data);
-  //   };
-  //   fetchData();
-  // }, []);
-
   return (
     <QueryClientProvider client={queryClient}>
+      <RouterProvider router={router} />
       <div>
-        <ExerciseList />
       </div>
     </QueryClientProvider>
   );
