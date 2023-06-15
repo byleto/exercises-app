@@ -1,11 +1,11 @@
-import { CreateExercisePage } from "../components/CreateExercisePage";
+import { CreateExercisePage } from "../components/pages/CreateExercisePage";
 
 import {
     createBrowserRouter
 } from "react-router-dom";
-import { PageContent } from "../components/PageContent"
-import { ExerciseList } from "../components/ExerciseList";
-import { HomePage } from "../components/HomePage";
+import { PageContent } from "../components/common/PageContent"
+import { ExerciseList } from "../components/pages/ExercisesPage";
+import { HomePage } from "../components/pages/HomePage";
 
 export const router = createBrowserRouter([
   {

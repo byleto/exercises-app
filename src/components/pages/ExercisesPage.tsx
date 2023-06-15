@@ -1,5 +1,5 @@
 import axios from "axios";
-import { Button, Container, Spinner, Stack, Table } from "react-bootstrap";
+import { Container, Spinner, Stack, Table } from "react-bootstrap";
 import { useQuery } from "react-query";
 
 type exercise = {
@@ -24,8 +24,7 @@ export const ExerciseList = () => {
   return (
     <Container>
       <Stack gap={3}>
-        <h1 className="text-center mt-4">Exercises</h1>
-        <Button className="ms-auto" variant="secondary">Create</Button>
+        <h3 className="text-center mt-4">Exercises</h3>
         <Table striped bordered hover>
           <thead>
             <tr>
