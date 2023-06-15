@@ -32,6 +32,8 @@ export const CreateExercisePage = () => {
     if (!isValid) {
       setGeneralValidationError(error.message);
       return;
+    } else {
+      setGeneralValidationError("");
     }
     try {
       const requestOptions = {
@@ -44,6 +46,7 @@ export const CreateExercisePage = () => {
       const response = await fetch(POST_EXERCISE_URL, requestOptions);
       if (response.status === 201) {
         queryClient.invalidateQueries(["exercises"]);
+        setNetworkError("");
         setSuccessMessage("Exercise successfully created.");
         await delay(1000);
         navigate("/exercises"); //set a timeout
@@ -65,7 +68,7 @@ export const CreateExercisePage = () => {
     const exceedsMaxLength = event.target.value.length > CONTENT_MAX_LENGTH;
     if (exceedsMaxLength) {
       setValidationError(
-        "The maximum length of the content should be 100 characters"
+        "Please shorten your exercise!"
       );
       setButtonDisabled(true);
     } else {
